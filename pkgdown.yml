@@ -1,9 +1,14 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   calculating_accessibility: calculating_accessibility.html
   calculating_isochrones: calculating_isochrones.html
-  intro_to_r5r: intro_to_r5r.html
-last_built: 2021-10-26T19:23Z
+  detailed_itineraries: detailed_itineraries.html
+  fare_structure: fare_structure.html
+  pareto_frontier: pareto_frontier.html
+  r5r: r5r.html
+  time_window: time_window.html
+  travel_time_matrix: travel_time_matrix.html
+last_built: 2022-08-15T08:25Z
 
