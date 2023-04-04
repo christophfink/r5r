@@ -55,7 +55,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">r5r</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.7.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -124,9 +124,9 @@
 <div class="section level1">
 <div class="page-header"><h1 id="r5r-rapid-realistic-routing-with-r5-in-r-">r5r: Rapid Realistic Routing with R5 in R <img align="right" src="reference/figures/r5r_blue.png" alt="logo" width="180"><a class="anchor" aria-label="anchor" href="#r5r-rapid-realistic-routing-with-r5-in-r-"></a>
 </h1></div>
-
+<p><a href="https://CRAN.R-project.org/package=r5r" class="external-link"><img src="https://www.r-pkg.org/badges/version/r5r" alt="CRAN/METACRAN Version"></a> <a href="https://CRAN.R-project.org/package=r5r" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/r5r?color=blue" alt="CRAN/METACRAN Total downloads"></a> <a href="https://github.com/ipeaGIT/r5r/actions" class="external-link"><img src="https://github.com/ipeaGIT/r5r/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://app.codecov.io/gh/ipeaGIT/r5r?branch=master" class="external-link"><img src="https://codecov.io/gh/ipeaGIT/r5r/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://lifecycle.r-lib.org/articles/figures/lifecycle-maturing.svg" alt="Lifecycle: maturing"></a> <a href="https://doi.org/10.32866/001c.21262" class="external-link"><img src="https://img.shields.io/badge/DOI-10.32866%2F001c.21262-yellow" alt="Publication"></a></p>
 <p><strong>r5r</strong> is an <code>R</code> package for rapid realistic routing on multimodal transport networks (walk, bike, public transport and car). It provides a simple and friendly interface to R<sup>5</sup>, the <a href="https://github.com/conveyal/r5" class="external-link">Rapid Realistic Routing on Real-world and Reimagined networks</a>, the routing engine developed independently by <a href="http://conveyal.com" class="external-link">Conveyal</a>.</p>
-<p><strong>r5r</strong> is a simple way to run R<sup>5</sup> locally, allowing <code>R</code> users to generate detailed routing analysis or calculate travel time matrices and accessibility using seamless parallel computing. See a detailed demonstration of <code>r5r</code> in the <a href="https://ipeagit.github.io/r5r/articles/r5r.html" class="external-link">intro Vignette</a>. More details about <strong>r5r</strong> can be found on the <a href="https://ipeagit.github.io/r5r/index.html" class="external-link">package webpage</a> or on this <a href="https://doi.org/10.32866/001c.21262" class="external-link">paper</a>. Over time, <code>r5r</code> migth be expanded to incorporate other functionalities from R<sup>5</sup></p>
+<p><strong>r5r</strong> is a simple way to run R<sup>5</sup> locally, allowing <code>R</code> users to generate detailed routing analysis or calculate travel time matrices and accessibility using seamless parallel computing. See a detailed demonstration of <code>r5r</code> in the <a href="https://ipeagit.github.io/r5r/articles/r5r.html" class="external-link">intro Vignette</a>. More details about <strong>r5r</strong> can be found on the <a href="https://ipeagit.github.io/r5r/index.html" class="external-link">package webpage</a> or on this <a href="https://doi.org/10.32866/001c.21262" class="external-link">paper</a>. Over time, <code>r5r</code> might be expanded to incorporate other functionality from R<sup>5</sup>.</p>
 <p>This repository contains the <code>R</code> code (r-package folder) and the Java code (java-api folder) that provides the interface to R<sup>5</sup>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -150,12 +150,12 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>The package has five fundamental functions.</p>
+<p>The package has six <strong>fundamental functions</strong>:</p>
 <ol style="list-style-type: decimal">
 <li>
 <code><a href="reference/setup_r5.html">setup_r5()</a></code><ul>
-<li>Downloads and stores locally an R5 Jar file (Jar file is downloaded only once per installation)</li>
-<li>Builds a multimodal transport network given (1) a street network in <code>.pbf</code> format (<em>mandatory</em>), (2) one or more public transport networks in <code>GTFS.zip</code> format (optional), and (3) elevation data in <code>raster.tif</code> (optional).</li>
+<li>Downloads and stores locally an R5 Jar file (the Jar file is downloaded only once per installation)</li>
+<li>Builds a multimodal transport network given (1) a OpenStreetMap street network in <code>.pbf</code> format (<em>mandatory</em>), (2) one or more public transport networks in <code>GTFS.zip</code> format (optional), and (3) elevation data in <code>raster.tif</code> (optional).</li>
 </ul>
 </li>
 <li>
@@ -165,13 +165,31 @@
 <code><a href="reference/travel_time_matrix.html">travel_time_matrix()</a></code><ul><li>Fast function that returns a simple <code>data.table</code> with travel time estimates between one or multiple origin destination pairs.</li></ul>
 </li>
 <li>
-<code><a href="reference/expanded_travel_time_matrix.html">expanded_travel_time_matrix()</a></code><ul><li>Calculates travel time matrices between origin destination pairs with additional information such routes used and total time disaggregated by access, waiting, in-vehicle and transfer times</li></ul>
+<code><a href="reference/expanded_travel_time_matrix.html">expanded_travel_time_matrix()</a></code><ul><li>Calculates travel time matrices between origin destination pairs with additional information such routes used and total time disaggregated by access, waiting, in-vehicle and transfer times.</li></ul>
 </li>
 <li>
-<code><a href="reference/detailed_itineraries.html">detailed_itineraries()</a></code><ul><li>Returns a <code>data.frame sf LINESTRINGs</code> with one or multiple alternative routes between one or multiple origin destination pairs. The data output brings detailed information on transport mode, travel time, walk distance etc for each trip section</li></ul>
+<code><a href="reference/detailed_itineraries.html">detailed_itineraries()</a></code><ul><li>Returns a <code>data.frame sf LINESTRINGs</code> with one or multiple alternative routes between one or multiple origin destination pairs. The data output brings detailed information on transport mode, travel time, walk distance etc for each trip segment.</li></ul>
+</li>
+<li>
+<code><a href="reference/pareto_frontier.html">pareto_frontier()</a></code><ul><li>Returns a <code>data.table</code> with the travel time and monetary cost of multiple route alternatives for specified origin-destination pairs.</li></ul>
 </li>
 </ol>
-<p>obs. Most of these functions also allow users to account for monetary travel costs when generating travel time matrices and accessibility estimates. More info about how to consider monetary costs can be found in <a href="https://ipeagit.github.io/r5r/articles/fare_calculator.html" class="external-link">this vignette</a>.</p>
+<p>obs. Most of these functions also allow users to account for monetary travel costs when generating travel time matrices and accessibility estimates. More info on how to consider monetary costs can be found in <a href="https://ipeagit.github.io/r5r/articles/fare_calculator.html" class="external-link">this vignette</a>.</p>
+<p>The package also includes a few <strong>support functions</strong>.</p>
+<ol style="list-style-type: decimal">
+<li>
+<code><a href="reference/street_network_to_sf.html">street_network_to_sf()</a></code><ul><li>Extract OpenStreetMap network in sf format from a <code>network.dat</code> file.</li></ul>
+</li>
+<li>
+<code><a href="reference/transit_network_to_sf.html">transit_network_to_sf()</a></code><ul><li>Extract transit network in sf format from a <code>network.dat</code> file.</li></ul>
+</li>
+<li>
+<code><a href="reference/find_snap.html">find_snap()</a></code><ul><li>Find snapped locations of input points on street network.</li></ul>
+</li>
+<li>
+<code><a href="reference/r5r_sitrep.html">r5r_sitrep()</a></code><ul><li>Generate a situation report to help debug eventual errors.</li></ul>
+</li>
+</ol>
 <div class="section level3">
 <h3 id="data-requirements">Data requirements:<a class="anchor" aria-label="anchor" href="#data-requirements"></a>
 </h3>
@@ -191,7 +209,7 @@
 </li>
 <li>GTFS<ul>
 <li>
-<a href="http://tidytransit.r-transit.org/" class="external-link">tidytransit</a> R package</li>
+<a href="https://r-transit.github.io/tidytransit/" class="external-link">tidytransit</a> R package</li>
 <li>
 <a href="https://www.transit.land/" class="external-link">transitland</a> website</li>
 </ul>
@@ -208,7 +226,7 @@
 <div class="section level3">
 <h3 id="demonstration-on-sample-data">Demonstration on sample data<a class="anchor" aria-label="anchor" href="#demonstration-on-sample-data"></a>
 </h3>
-<p>See a detailed demonstration of <code>r5r</code> in this <a href="https://ipeagit.github.io/r5r/articles/intro_to_r5r.html" class="external-link">intro Vignette</a>. To illustrate functionality, the package includes a small sample data set of the public transport and Open Street Map networks of Porto Alegre (Brazil). Three steps are required to use <code>r5r</code>, as follows.</p>
+<p>See a detailed demonstration of <code>r5r</code> in this <a href="https://ipeagit.github.io/r5r/articles/r5r.html" class="external-link">intro Vignette</a>. To illustrate functionality, the package includes a small sample data set of the public transport and Open Street Map networks of Porto Alegre (Brazil). Three steps are required to use <code>r5r</code>, as follows.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># allocate RAM memory to Java</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>java.parameters <span class="op">=</span> <span class="st">"-Xmx2G"</span><span class="op">)</span></span>
@@ -256,8 +274,8 @@
 <span>                        mode <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"WALK"</span>, <span class="st">"TRANSIT"</span><span class="op">)</span>,</span>
 <span>                        verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="section level4">
-<h4 id="related-r-packages">
-<strong>Related R packages</strong><a class="anchor" aria-label="anchor" href="#related-r-packages"></a>
+<h4 id="related-packages">
+<strong>Related packages</strong><a class="anchor" aria-label="anchor" href="#related-packages"></a>
 </h4>
 <p>There is a growing number of <code>R</code> packages with functionalities for transport routing, analysis and planning more broadly. Here are few of theses packages.</p>
 <ul>
@@ -273,6 +291,7 @@
 <a href="https://github.com/ropensci/stplanr" class="external-link">stplanr</a>: sustainable transport planning with R</li>
 </ul>
 <p>The <strong>r5r</strong> package is particularly focused on fast multimodal transport routing and accessibility. A key advantage of <code>r5r</code> is that is provides a simple and friendly R interface to R<sup>5</sup>, one of the fastest and most robust routing engines available.</p>
+<p>For <strong><em>Python</em></strong> users, you might want to check our sister package: <a href="https://r5py.readthedocs.io/en/stable/" class="external-link"><strong>r5py</strong></a>!</p>
 <hr>
 </div>
 </div>
@@ -347,17 +366,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=r5r" class="external-link"><img src="https://www.r-pkg.org/badges/version/r5r" alt="CRAN/METACRAN Version"></a></li>
-<li><a href="https://CRAN.R-project.org/package=r5r" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/r5r?color=blue" alt="CRAN/METACRAN Total downloads"></a></li>
-<li><a href="https://github.com/ipeaGIT/r5r/actions" class="external-link"><img src="https://github.com/ipeaGIT/r5r/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://app.codecov.io/gh/ipeaGIT/r5r?branch=master" class="external-link"><img src="https://codecov.io/gh/ipeaGIT/r5r/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://lifecycle.r-lib.org/articles/figures/lifecycle-maturing.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://doi.org/10.32866/001c.21262" class="external-link"><img src="https://img.shields.io/badge/DOI-10.32866%2F001c.21262-yellow" alt="Publication"></a></li>
-</ul>
-</div>
+
 
   </div>
 </div>
@@ -370,7 +379,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

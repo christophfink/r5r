@@ -27,7 +27,7 @@ used to snap car trips)."><meta property="og:image" content="/logo.png"><!-- mat
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">r5r</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.7.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -129,9 +129,9 @@ to the network. Defaults to <code>WALK</code>, also allows <code>BICYCLE</code> 
     
 
 <p>A <code>data.table</code> with the original points, their respective
-snapped coordinates on the street network and the Euclidean distance between
-the original points and their snapped location. Points that could not
-be snapped show <code>NA</code> coordinates and <code>found = FALSE</code>.</p>
+snapped coordinates on the street network and the Euclidean distance ( in
+meters) between the original points and their snapped location. Points that
+could not be snapped show <code>NA</code> coordinates and <code>found = FALSE</code>.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -146,7 +146,7 @@ be snapped show <code>NA</code> coordinates and <code>found = FALSE</code>.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/poa"</span>, package <span class="op">=</span> <span class="st">"r5r"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">r5r_core</span> <span class="op">&lt;-</span> <span class="fu"><a href="setup_r5.html">setup_r5</a></span><span class="op">(</span>data_path <span class="op">=</span> <span class="va">path</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using cached R5 version from /home/runner/work/_temp/Library/r5r/jar/r5-v6.7-all.jar</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using cached R5 version from /home/runner/work/_temp/Library/r5r/jar/r5-v6.9-all.jar</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Using cached network.dat from /home/runner/work/_temp/Library/r5r/extdata/poa/network.dat</span>
 <span class="r-in"><span><span class="va">points</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">path</span>, <span class="st">"poa_hexgrid.csv"</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -169,7 +169,7 @@ be snapped show <code>NA</code> coordinates and <code>found = FALSE</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
